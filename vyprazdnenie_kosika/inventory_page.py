@@ -21,7 +21,7 @@ class InventoryPage:
             EC.element_to_be_clickable(
                 (By.XPATH, "//div[@class='inventory_item' and .//div[text()='Sauce Labs Fleece Jacket']]//button"))).click()
 
-    def potvrd_pocet_predmetov_kosik(self):
+    def test_potvrd_pocet_predmetov_kosik(self):
         WebDriverWait(self.driver,10).until(EC.visibility_of_element_located((By.XPATH,"//span[@class='fa-layers-counter shopping_cart_badge']")))
         kosik = self.driver.find_element(By.XPATH, "//span[@class='fa-layers-counter shopping_cart_badge']")
         assert kosik.text == "2", f"Očakávaný počet predmetov v košíku :2, aktuálny počet : {kosik.text} "

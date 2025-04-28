@@ -18,9 +18,11 @@ def test_nakup(driver):
     cart_page = CartPage(driver)
 
     login_page.login("standard_user","secret_sauce")
+    inventory_page.test_potvrd_prihlasenie()
     inventory_page.vyber_ruksak()
     inventory_page.vyber_bundu()
     inventory_page.klikni_na_kosik()
+    inventory_page.test_potvrd_pocet_predmetov_kosik()
     cart_page.odstran_ruksak()
     cart_page.odstran_bundu()
     cart_page.test_prazdny_kosik()
