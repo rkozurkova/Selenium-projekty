@@ -6,6 +6,7 @@ class CartPage:
     def __init__(self,driver):
         self.driver = driver
 
+
     def klikni_na_checkout(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable(

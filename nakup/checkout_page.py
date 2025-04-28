@@ -8,6 +8,17 @@ class CheckoutPage:
     def __init__(self, driver):
         self.driver = driver
 
+    def test_formular(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.ID, "first-name")))
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.ID, "last-name")))
+        WebDriverWait(self.driver, 10).until(
+            EC.visibility_of_element_located((By.ID, "postal-code")))
+
+        assert self.driver.find_element(By.ID, "first-name")
+        assert self.driver.find_element(By.ID, "last-name")
+        assert self.driver.find_element(By.ID, "postal-code")
 
     def vypln_meno(self, meno):
         WebDriverWait(self.driver, 10).until(

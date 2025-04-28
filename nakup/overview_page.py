@@ -9,3 +9,5 @@ class OverviewPage:
     def klikni_na_finish(self):
         WebDriverWait(self.driver, 10).until(
             EC.element_to_be_clickable((By.XPATH, "//a[normalize-space()='FINISH']"))).click()
+
+    
