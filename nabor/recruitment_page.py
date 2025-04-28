@@ -33,4 +33,9 @@ class RecruitmentPage:
     def potvrd_vyber(self):
         WebDriverWait(self.driver, 10).until(EC.element_to_be_clickable((By.XPATH, "//button[normalize-space()='Search']"))).click()
 
+    def najdi_pocet_vyskytov(self):
+        WebDriverWait(self.driver,10).until(EC.visibility_of_element_located((By.XPATH,"//span[@class='oxd-text oxd-text--span']")))
+        sprava = self.driver.find_element(By.XPATH,"//span[@class='oxd-text oxd-text--span']")
+        return sprava.text.strip()
+
 

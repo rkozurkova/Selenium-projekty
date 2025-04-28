@@ -23,3 +23,8 @@ def test_nabor(driver):
     recruitment_page.vyber_status()
     recruitment_page.vyber_volne_miesto()
     recruitment_page.potvrd_vyber()
+
+    vypis_spravy = recruitment_page.najdi_pocet_vyskytov()
+    assert vypis_spravy.startswith("(") and vypis_spravy.endswith("Records Found"), f"Neočakávaný formát: {vypis_spravy}"
+    vypis_cisla = vypis_spravy[1:vypis_spravy.index(")")]
+    assert vypis_cisla.isdigit(), f"Očakávané číslo v (), namiesto toho: {vypis_cisla} "
