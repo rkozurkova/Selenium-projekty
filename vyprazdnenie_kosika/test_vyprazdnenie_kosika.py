@@ -6,7 +6,7 @@ from inventory_page import InventoryPage
 
 @pytest.fixture
 def driver():
-    driver = webdriver.Chrome()
+    driver = webdriver.Firefox()
     driver.get("https://www.saucedemo.com/v1/index.html")
     driver.maximize_window()
     yield driver
@@ -23,4 +23,5 @@ def test_nakup(driver):
     inventory_page.klikni_na_kosik()
     cart_page.odstran_ruksak()
     cart_page.odstran_bundu()
+    cart_page.test_prazdny_kosik()
     cart_page.pokracuj_v_nakupe()
